@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: MovieApp(),
   ));
 }
@@ -34,7 +35,7 @@ class _MovieAppState extends State<MovieApp> {
       ),
       body: Padding(
         padding: EdgeInsets.only(top: 12.0),
-        child: Column(
+        child: ListView(
           children: <Widget>[
             Container(
               height: 40.0,
@@ -104,18 +105,79 @@ class _MovieAppState extends State<MovieApp> {
                         fontSize: 26.0),
                   ),
                 ),
-                SizedBox(
-                  height: 12.0,
-                ),
-                Container(
-                  width: double.infinity,
-                  height: 230.0,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: <Widget>[],
+              ],
+            ),
+            SizedBox(
+              height: 12.0,
+            ),
+            Container(
+              width: double.infinity,
+              height: 230.0,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 12.0),
+                    child: MovieCard(
+                        'DRAGONBALL', '9.5/10', 'assets/dragonball.jpg'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 12.0),
+                    child: MovieCard('POKEMON', '9/10', 'assets/pokemon.jpg'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 12.0),
+                    child: MovieCard(
+                        'SPIDER-MAN', '8.5/10', 'assets/spiderman.jpg'),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 12.0,
+            ),
+            Row(
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.only(left: 12.0),
+                  child: Text(
+                    'Recommendation for you',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.orange,
+                        fontSize: 26.0),
                   ),
                 ),
               ],
+            ),
+            SizedBox(
+              height: 12.0,
+            ),
+            Container(
+              width: double.infinity,
+              height: 230.0,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 12.0),
+                    child:
+                        MovieCard('AVENGERS', '9.5/10', 'assets/avengers.jpg'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 12.0),
+                    child: MovieCard('JOKER', '9/10', 'assets/joker.jpg'),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 12.0),
+                    child: MovieCard(
+                        'TERMINATOR', '8.5/10', 'assets/terminator.jpg'),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 30.0,
             ),
           ],
         ),
