@@ -107,10 +107,56 @@ class _MovieAppState extends State<MovieApp> {
                 SizedBox(
                   height: 12.0,
                 ),
+                Container(
+                  width: double.infinity,
+                  height: 230.0,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: <Widget>[],
+                  ),
+                ),
               ],
             ),
           ],
         ),
+      ),
+    );
+  }
+
+//Lets create a custom widget
+
+  Widget MovieCard(String Title, String Rate, String imgPath) {
+    return InkWell(
+      onTap: () {},
+      child: Column(
+        children: <Widget>[
+          Card(
+            elevation: 0.0,
+            child: Image.asset(
+              imgPath,
+              fit: BoxFit.fill,
+              width: 130.0,
+              height: 160.0,
+            ),
+          ),
+          SizedBox(
+            height: 5.0,
+          ),
+          Text(
+            Title,
+            style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 26.0),
+          ),
+          SizedBox(
+            height: 5.0,
+          ),
+          Text(
+            Rate,
+            style: TextStyle(color: Colors.white, fontSize: 18.0),
+          ),
+        ],
       ),
     );
   }
